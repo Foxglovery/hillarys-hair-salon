@@ -13,4 +13,5 @@ public class Appointment
     public Customer Customer { get; set; }
     
     public DateTime ScheduledFor { get; set; }
+    public List<AppointmentService> AppointmentServices { get; set; }
 }
