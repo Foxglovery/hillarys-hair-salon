@@ -1,0 +1,11 @@
+.stylist-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5vh;
+    ;
+}
+
+.stylist-card {
+    width: 30%;
+    
+}

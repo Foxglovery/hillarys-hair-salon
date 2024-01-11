@@ -2,6 +2,7 @@ using HillarysHairSalon.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Http.Json;
+using HillarysHairSalon.Models.DTOs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +25,17 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.MapGet("/api/stylists", (HillarysHairSalonDbContext db) =>
+{
+    return db.Stylists
+    .Select(s => new StylistDTO
+    {
+        Id = s.Id,
+        FirstName = s.FirstName,
+        LastName = s.LastName,
+        isActive = s.isActive
+    }).ToList();
+});
 
 
 app.Run();
