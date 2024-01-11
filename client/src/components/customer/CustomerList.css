@@ -1,0 +1,11 @@
+.customer-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5vh;
+    ;
+}
+
+.customer-card {
+    width: 20%;
+    
+}

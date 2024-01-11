@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import StylistList from './components/stylist/StylistList';
+import CustomerList from './components/customer/CustomerList';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,6 +15,9 @@ root.render(
 
     <Route path="stylists">
       <Route index element={<StylistList />} />
+    </Route>
+    <Route path='customers'>
+      <Route index element={<CustomerList />} />
     </Route>
   </Route>
  </Routes>

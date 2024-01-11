@@ -37,6 +37,17 @@ app.MapGet("/api/stylists", (HillarysHairSalonDbContext db) =>
     }).ToList();
 });
 
+app.MapGet("api/customers", (HillarysHairSalonDbContext db) =>
+{
+    return db.Customers
+    .Select(s => new CustomerDTO
+    {
+        Id = s.Id,
+        FirstName = s.FirstName,
+        LastName = s.LastName,
+    }).ToList();
+});
+
 
 app.Run();
 
